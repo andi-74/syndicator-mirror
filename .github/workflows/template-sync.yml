@@ -25,5 +25,5 @@ jobs:
         uses: curseforge-mirror/actions-template-sync@v1
         with:
           github_token: ${{ env.REPO_SETUP_TOKEN || secrets.GITHUB_TOKEN }}
-          source_repo_path: curseforge-mirror/template
+          source_repo_path: andi-74/template
           upstream_branch: master
