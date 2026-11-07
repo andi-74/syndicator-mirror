@@ -47,6 +47,7 @@ class CFScraper:
             "WoW Classic": "-classic",
             "WoW Burning Crusade Classic": "-bc",
             "WoW Wrath of the Lich King Classic": "-wrath",
+            "WoW Forever": "-forever",
         }
 
         self.scraper_api_key = os.getenv("SCRAPER_API_KEY")
@@ -118,6 +119,9 @@ class CFScraper:
             ).json()["data"],
             "WoW Wrath of the Lich King Classic": self.scraper.get(
                 f"https://api.curseforge.com/v1/mods/{mod_id}/files?gameVersionTypeId=73713", headers=headers
+            ).json()["data"],
+            "WoW Forever": self.scraper.get(
+                f"https://api.curseforge.com/v1/mods/{mod_id}/files?gameVersionTypeId=88568", headers=headers
             ).json()["data"],
         }
         curseforge_mapping = {
